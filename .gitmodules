@@ -1,0 +1,6 @@
+[submodule "mycosnp-nf"]
+	path = mycosnp-nf
+	url = https://github.com/CDCgov/mycosnp-nf.git
+[submodule "/home/dnalab/Candida_auris/mycosnp-nf"]
+	path = /home/dnalab/Candida_auris/mycosnp-nf
+	url = git@github.com:CDCgov/mycosnp-nf.git

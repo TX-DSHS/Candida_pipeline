@@ -1,0 +1,13 @@
+results*
+bin/__pycache__/
+reads/*
+ref/*
+samplesheet/*
+work
+work/*
+tmp/*
+.nextflow*
+.nextflow.log*
+tmp
+tmp/*
+
