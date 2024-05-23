@@ -3,7 +3,7 @@
 Utilizing CDC mycosnp_nf pipeline verion v1.5 Wingardium Leviosa - [05/09/2023] (https://github.com/CDCgov/mycosnp-nf) for Candida auris clade determination for Texas. 
 Per CDC guidelines , the reference used is : GCA_016772135.1_ASM1677213v1_genomic.fna (B11205)
 | **For Clade controls:** |     |      |    |    |
-| ----------------------- | --- | ---- | -- | -- |
+| :---------------------- | :--- | :--- | :--- | :--- |
 | **Clade** | **Strain** | **BioSample** | **SRA** | **GenBank** |
 | Clade I (South Asia) | B11205 | SAMN18754597 | SRR14252434 | GCA_016772135.1_ASM1677213v1_genomic.fna |
 | Clade II (East Asia) | B11220 | SAMN05379608 | SRR14906880 | GCA_003013715.2_ASM301371v2_genomic.fna |
