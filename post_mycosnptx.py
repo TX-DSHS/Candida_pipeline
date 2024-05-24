@@ -57,7 +57,7 @@ def prep_SRA_submission(result, run_name):
     #print(instrument)
 #Extract instrument name from sample name     
           if instrument[0] == "M":
-            instrument_name = "MiSeq"
+            instrument_name = "Illumina MiSeq"
           elif instrument[0] == "V":
             instrument_name = "NextSeq 2000"
           print("Instrument:")
