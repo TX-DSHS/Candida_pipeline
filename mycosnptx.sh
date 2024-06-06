@@ -104,7 +104,14 @@ main () {
   wait ${pd_aws}
   if [ $? -eq 0 ] && [ -e "${prefix}/${run_name}_QC_REPORT.txt" ]; then
     echo "Preparing fastq files and metadata file for SRA submission."
-    python ${work_dir}/post_mycosnptx.py ${run_name} 
+    python ${work_dir}/post_mycosnptx.py ${run_name} &
+    pd_post=$!
+    wait ${pd_post}
+    echo "SRA metadata file generataion complete."
+    bash submit_to_SRA.sh ${run_name} &
+    pd_SRA=$!
+    wait ${pd_SRA}
+    echo "Samples submitted to SRA."
   else 
     echo "NCBI prep failed."
     exit 1
