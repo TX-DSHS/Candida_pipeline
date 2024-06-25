@@ -11,6 +11,7 @@ run_dir=/home/dnalab/Candida_auris/mycosnp-nf
 samplesheet_dir=${PWD}/mycosnp-nf/samplesheet
 samplesheet=${run_name}.csv
 prefix=/bioinformatics/Candida_auris/mycosnp-nf/output/${run_name}
+out=/bioinformatics/Candida_auris/mycosnp-nf/output/
 sra_file=${samplesheet_dir}
 
 
@@ -18,9 +19,9 @@ sra_file=${samplesheet_dir}
 #mkdir $run_dir/output/${run_name}
 #mkdir $run_dir/output/$1/bam
 #mkdir $run_dir/reads/zip
-rm $work_dir/.nextflow.* #remove old nextflow.logs (06/25/24)
-rm -r $run_dir/reads/CA* #remove old reads (06/25/24)
-rm -r $prefix/* #remove old run (06/25/24)
+rm ${work_dir}/.nextflow.* #remove old nextflow.logs (06/25/24)
+rm -r ${run_dir}/reads/CA* #remove old reads (06/25/24)
+rm -r ${out}/* #remove old run (06/25/24)
 mkdir ${run_dir}/reads/${run_name}
 mkdir ${run_dir}/samplesheet
 mkdir ${prefix}
