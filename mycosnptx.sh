@@ -1,7 +1,7 @@
 #!/bin/bash
 version="mycosnptx version 1.01"
 #author		 :Jessica Respress
-#date		 :2024/03/05
+#date		 :2024/06/25
 #usage		 :bash mycosnptx.sh <run_name>
 
 run_name="$1"
@@ -15,9 +15,12 @@ sra_file=${samplesheet_dir}
 
 
 #mkdir $run_dir/output
-mkdir $run_dir/output/${run_name}
+#mkdir $run_dir/output/${run_name}
 #mkdir $run_dir/output/$1/bam
 #mkdir $run_dir/reads/zip
+rm $work_dir/.nextflow.* #remove old nextflow.logs (06/25/24)
+rm -r $run_dir/reads/CA* #remove old reads (06/25/24)
+rm -r $prefix/* #remove old run (06/25/24)
 mkdir ${run_dir}/reads/${run_name}
 mkdir ${run_dir}/samplesheet
 mkdir ${prefix}
@@ -89,10 +92,8 @@ main () {
     aws s3 cp ${prefix}".zip" s3://804609861260-bioinformatics-infectious-disease/Candida/ANALYSIS_RESULT/ --region us-gov-west-1  --profile Bacteria_wgs_user &
     pd_aws=$!
     wait ${pd_aws}
-    rm -r ${work_dir}/work
-    mkdir ${work_dir}/work
-    rm -r ${run_dir}/tmp
-    mkdir ${run_dir}/tmp
+    rm -r ${work_dir}/work/*
+    rm -r ${run_dir}/tmp/*
     rm ${run_dir}/samplesheet/${run_name}.csv
     echo "Output uploaded to aws!"
   else
