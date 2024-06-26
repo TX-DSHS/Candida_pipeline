@@ -11,6 +11,12 @@ Per CDC guidelines , the reference used is : GCA_016772135.1_ASM1677213v1_genomi
 | Clade IV (South America) | B11243 | SAMN05379621 | SRR3883466 | GCA_003014415.1_Cand_auris_B11243_genomic.fna |
 | Clade V (Iranian) | IRFC2087 | SAMN11570381 | SRR9007776 | GCA_016809505.1_ASM1680950v1_genomic.fna |
 
+Install:
+1. Download CDC mycosnp_nf pipeline from (https://github.com/CDCgov/mycosnp-nf) and follow installation guidelines provided.
+2. Download Candida_pipeline from (https://github.com/TX-DSHS/Candida_pipeline.git) in same working directory as mycosnp_nf.
+3. Use 'dos2unix {file_name}' to convert all files in Candida_pipeline if necessary.
+4. Open mycosnptx.sh and adjust file directory paths if necessary.
+5. In the nextflow run command found in mycosnptx.sh line  62, change the -profile from {singularity} to {docker} when needed. 
 
 
 Workflow:
@@ -25,6 +31,5 @@ Workflow:
 
 Command:
 1. bash mycosnptx.sh <Run_Name>
-2. bash submit_to_SRA.sh <Run_Name>
 
 ![Candida_auris_workflow](https://github.com/TX-DSHS/Candida_pipeline/assets/127244776/09dcf597-eba8-4e66-805c-966d0750a007)
