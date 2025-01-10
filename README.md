@@ -18,8 +18,7 @@ Install:
 4. Open mycosnptx.sh and adjust file directory paths if necessary.
 5. Create mycosnptx conda environment using mycostnptx.yml found in base directory(/Candida_auris/mycosnptx.yml) with this command: 
         <conda env create -f mycostnptx.yml --name mycosnptx> 
-6. Activate conda environment using this command:
-        <conda activate mycosnptx>
+6. Activate conda environment using this command: <conda activate mycosnptx>
 7. In the nextflow run command found in mycosnptx.sh line  62, change the -profile from {singularity} to {docker} when needed. 
 
 
