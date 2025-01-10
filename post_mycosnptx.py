@@ -119,14 +119,14 @@ def prep_SRA_submission(result, run_name):
 
 #Fill in SRA_metadata template with samples to be submitted
           new_row_metadata = {"sample_name": results["sample_id"],"library_ID": results["sample_id"],"title": "CDC Mycotic Diseases Branch Candida auris pathogen surveillance","library_strategy": "WGS","library_source": "GENOMIC","library_selection": "RANDOM","library_layout": "PAIRED","platform": "ILLUMINA","instrument_model": results["instrument_model"],"design_description": "Illumina DNA Prep","filetype": "fastq","filename": SRA_file_path_R1["R1"],"filename2": SRA_file_path_R2["R2"],"filename3": "","filename4": "","assembly": "","fasta_file": ""}
-          new_row_metadata = pd.DataFrame(new_row_metadata)         
-          metadata = metadata.append(new_row_metadata, ignore_index = True)
+          metadata = pd.DataFrame(new_row_metadata)         
+          #metadata = metadata.append(new_row_metadata, ignore_index = True)
           metadata.to_csv(out + run_name + "_SRA_metadata.tsv", sep = "\t", index = False)
           
 #Fill in SRA_attribute template with samples to be submitted
           new_row_attr = {"sample_name": results["sample_id"],"bioproject_accession": "PRJNA1092051","organism": "Candida auris","collection_date": collection_date["collection_dates"],"collected_by": "USA","geo_loc_name": "USA:Mountain","host":"Homo sapiens","host_disease":"missing","isolate": results["sample_id"],"isolation_source": results["sourceSite"],"latitude_and_longitude": "missing"}
-          new_row_attr = pd.DataFrame(new_row_attr)                      
-          attribute = attribute.append(new_row_attr, ignore_index = True)
+          attribute = pd.DataFrame(new_row_attr)                      
+          #attribute = attribute.append(new_row_attr, ignore_index = True)
           attribute.to_csv(out + run_name + "_SRA_attribute.tsv", sep = "\t", index = False)    
     
           return results

@@ -5,7 +5,7 @@ version="mycosnptx version 1.01"
 #usage		 :bash mycosnptx.sh <run_name>
 
 run_name="$1"
-work_dir=/home/dnalab/Candida_auris
+work_dir=/home/dnalab/Candida_auris/
 metadata_dir=/home/dnalab/Candida_auris/mycosnp-nf/reads/${run_name}/${run_name}_metadata.xlsx
 run_dir=/home/dnalab/Candida_auris/mycosnp-nf
 samplesheet_dir=${PWD}/mycosnp-nf/samplesheet
@@ -19,7 +19,7 @@ sra_file=${samplesheet_dir}
 #mkdir $run_dir/output/${run_name}
 #mkdir $run_dir/output/$1/bam
 #mkdir $run_dir/reads/zip
-rm ${work_dir}/.nextflow.* #remove old nextflow.logs (06/25/24)
+rm ${work_dir}.nextflow.* #remove old nextflow.logs (06/25/24)
 rm -r ${run_dir}/reads/CA* #remove old reads (06/25/24)
 rm -r ${out}/CA* #remove old run (06/25/24)
 mkdir ${run_dir}/reads/${run_name}

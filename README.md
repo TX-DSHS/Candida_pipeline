@@ -16,6 +16,9 @@ Install:
 2. Download Candida_pipeline from (https://github.com/TX-DSHS/Candida_pipeline.git) in same working directory as mycosnp_nf.
 3. Use 'dos2unix {file_name}' to convert all files in Candida_pipeline if necessary.
 4. Open mycosnptx.sh and adjust file directory paths if necessary.
+5. Create and activate conda environment using these commands : 
+        conda env create -f mycostnptx.yml --name mycosnptx
+        conda activate mycosnptx
 5. In the nextflow run command found in mycosnptx.sh line  62, change the -profile from {singularity} to {docker} when needed. 
 
 
